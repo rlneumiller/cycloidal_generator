@@ -25,23 +25,18 @@ def run(context):
     default_name = 'Cycloidal Gear Generator'
     parameters = fusionUtils.Parameters()
 
-    """Parameters to appear in the Fusion window
-        Parameters will apear in the order here with the following values:
-        name: the varuable name that will hold the valie
-        units: the units that the value will be converted to. "" for unitless
-        description: the text which will appear with the box
-        default_value: the initial value that will appear before being edited """
+    gear_params = GearParameters()
 
-    parameters.addParameter('rotorThickness', "mm", 'Rotor Thickness', .635)
-    parameters.addParameter('housingThickness', "mm", 'Housing Thickness', .635*2)
-    parameters.addParameter('R', "mm", 'Radius', 5)
-    parameters.addParameter('N', "", 'Number of pins', 10)
-    parameters.addParameter('bore', "mm", 'Bore Diameter', 1)
-    parameters.addParameter('numGears', "", 'Number of gears', 1)
-    parameters.addParameter('numHoles', "", 'Number of drive holes', 0)
-    parameters.addParameter('holePinDiameter', "mm", 'Diameter of drive pins', .25)
-    parameters.addParameter('holeCircleDiameter', "mm", 'Diameter of hole circle', 3)
-    parameters.addParameter('eccentricityRatio', "", 'Eccentricity Ratio', .5)
+    parameters.addParameter('rotor_thickness', "mm", 'Rotor Thickness', gear_params.rotor_thickness)
+    parameters.addParameter('housing_thickness', "mm", 'Housing Thickness', gear_params.housing_thickness)
+    parameters.addParameter('rotor_radius', "mm", 'Rotor radius', gear_params.rotor_radius)
+    parameters.addParameter('num_pins', "", 'Number of pins', gear_params.num_pins)
+    parameters.addParameter('bore', "mm", 'Bore Diameter', gear_params.bore)
+    parameters.addParameter('num_gears', "", 'Number of gears', gear_params.num_gears)
+    parameters.addParameter('num_holes', "", 'Number of drive holes', gear_params.num_holes)
+    parameters.addParameter('drive_pin_diameter', "mm", 'Diameter of drive pins', gear_params.drive_pin_diameter)
+    parameters.addParameter('hole_circle_diameter', "mm", 'Diameter of (drive?) hole circle', gear_params.hole_circle_diameter)
+    parameters.addParameter('eccentricity', "", 'Eccentricity', gear_params.eccentricity)
 
     created_object = CreatedObject() # Create an instance of the designed class
     fusionUtils.run(parameters, default_name, created_object)
