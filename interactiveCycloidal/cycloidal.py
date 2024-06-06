@@ -38,7 +38,7 @@ def run(context):
     parameters.addParameter('hole_circle_diameter', "mm", 'Diameter of (drive?) hole circle', gear_params.hole_circle_diameter)
     parameters.addParameter('eccentricity', "", 'Eccentricity', gear_params.eccentricity)
 
-    created_object = CreatedObject() # Create an instance of the designed class
+    created_object = CreatedObject()  # Create an instance of the designed class
     fusionUtils.run(parameters, default_name, created_object)
 
 
