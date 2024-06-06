@@ -7,6 +7,20 @@ import math
 from . import fusionUtils
 
 
+class GearParameters:
+    ''' Gear parameters '''
+    def __init__(self):
+        self.rotor_thickness = 5
+        self.housing_thickness = self.rotor_thickness * 2
+        self.rotor_radius = 100
+        self.num_pins = 10
+        self.bore = 5
+        self.num_gears = 1
+        self.num_holes = 5
+        self.drive_pin_diameter = 3
+        self.hole_circle_diameter = 1
+        self.eccentricity = 0.5
+
 def run(context):
     """ The function that is run by Fusion """
 
