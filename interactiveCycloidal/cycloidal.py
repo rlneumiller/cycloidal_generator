@@ -22,9 +22,7 @@ class GearParameters:
         self.eccentricity = 0.5
 
 def run(context):
-    """ The function that is run by Fusion """
-
-    default_name = 'Cycloidal' # The name which appears in the top bar
+    default_name = 'Cycloidal Gear Generator'
     parameters = fusionUtils.Parameters()
 
     """Parameters to appear in the Fusion window
