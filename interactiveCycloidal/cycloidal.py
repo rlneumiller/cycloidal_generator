@@ -43,7 +43,7 @@ def run(context):
 
 
 class CreatedObject:
-    """ The class which contains definitions to create the part """
+    """ Part definitions """
 
     def __init__(self):
         self.parameters = {}
@@ -53,23 +53,13 @@ class CreatedObject:
 
         newComp = fusionUtils.createNewComponent(app)
         if newComp is None:
-            ui.messageBox('New component failed to create', 'New Component Failed')
+            ui.messageBox('Failed to create new component', 'New Component Creation Failed')
             return
 
-
-        # Copy parameters into local variables for ease of use
-        eccentricityRatio = self.parameters["eccentricityRatio"]
-        rotorThickness = self.parameters["rotorThickness"]
-        housingThickness = self.parameters["housingThickness"]
-        R = self.parameters["R"]
-        N = self.parameters["N"]
-        bore = self.parameters["bore"]
-        numGears = self.parameters["numGears"]
-        numHoles = self.parameters["numHoles"]
-        holePinDiameter = self.parameters["holePinDiameter"]
-        holeCircleDiameter = self.parameters["holeCircleDiameter"]
         units_mgr = app.activeProduct.unitsManager
-
+        
+        gear_params = GearParameters()
+        
         #other constants based on the original inputs
         housing_cir = 2 * R * math.pi
         Rr = housing_cir / (4 * N)#roller radius
